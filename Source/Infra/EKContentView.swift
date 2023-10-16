@@ -568,9 +568,6 @@ extension EKContentView {
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-        guard containsFirstResponder else {
-            return
-        }
         keyboardState = .visible
         animate(by: notification.userInfo, entrance: true)
     }
@@ -584,9 +581,6 @@ extension EKContentView {
     }
     
     @objc func keyboardWillChangeFrame(_ notification: Notification) {
-        guard containsFirstResponder else {
-            return
-        }
         animate(by: notification.userInfo, entrance: true)
     }
 }
